@@ -11,6 +11,8 @@ const getLocalStorage = () => {
 };
 function App() {
   const [name, setName] = useState('');
+  const [Quantity, setQuantity] = useState('');
+  const [Unitmeasure, setUnitmeasure] = useState('kg');
   const [list, setList] = useState(getLocalStorage());
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
@@ -34,7 +36,7 @@ function App() {
       showAlert(true, 'success', 'value changed');
     } else {
       showAlert(true, 'success', 'item added to the list');
-      const newItem = { id: new Date().getTime().toString(), title: name };
+      const newItem = { id: new Date().getTime().toString(), title: name + " " + Quantity  + " " +  Unitmeasure };
 
       setList([...list, newItem]);
       setName('');
@@ -67,7 +69,7 @@ function App() {
         {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
 
         <h3>grocery bud</h3>
-        <div className='form-control'>
+        <div className='form-control'>  
           <input
             type='text'
             className='grocery'
@@ -75,6 +77,20 @@ function App() {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+          <input
+            type='number'
+            className='grocery'
+            placeholder='25'
+            value={Quantity}
+            onChange={(e) => setQuantity(e.target.value)}
+          />
+          <select id="Unitmeasure" className='grocery' value={Unitmeasure} onChange={(e) => setUnitmeasure(e.target.value)}>
+            <option value="kg">Kg</option>
+            <option value="gram">gram</option>
+            <option value="mil">mil</option>
+            <option value="unit">unit</option>
+
+          </select>
           <button type='submit' className='submit-btn'>
             {isEditing ? 'edit' : 'submit'}
           </button>

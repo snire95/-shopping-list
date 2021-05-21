@@ -143,9 +143,9 @@ p {
 }
 
 .section-center {
-  width: 90vw;
+  width: 100vw;
   margin: 0 auto;
-  max-width: 35rem;
+  max-width: 45rem;
   margin-top: 8rem;
 }
 @media screen and (min-width: 992px) {
@@ -202,7 +202,8 @@ Grocery List
   justify-content: center;
 }
 .grocery {
-  padding: 0.25rem;
+  margin: 0.2rem;
+  padding: 0.5rem;
   padding-left: 1rem;
   background: var(--clr-grey-10);
   border-top-left-radius: var(--radius);
@@ -222,15 +223,16 @@ Grocery List
   flex: 0 0 5rem;
   display: grid;
   align-items: center;
-  padding: 0.25rem;
+  /* padding: 0.25rem; */
   text-transform: capitalize;
   letter-spacing: 2px;
-  border-top-right-radius: var(--radius);
-  border-bottom-right-radius: var(--radius);
+  /* border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius); */
+  border-radius: var(--radius);
   cursor: pointer;
   content: var(--clr-primary-5);
   transition: var(--transition);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 .submit-btn:hover {
   background: var(--clr-primary-5);
