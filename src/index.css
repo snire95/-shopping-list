@@ -118,6 +118,9 @@ p {
   h4 {
     line-height: 1;
   }
+  .form-control {
+    flex-direction: column;
+  }
 }
 .btn {
   text-transform: uppercase;
@@ -199,7 +202,8 @@ Grocery List
 }
 .form-control {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: left;
 }
 .grocery {
   margin: 0.2rem;
@@ -219,20 +223,30 @@ Grocery List
 }
 .submit-btn {
   background: var(--clr-primary-8);
-  border-color: transparent;
+  /* border-color: transparent;
   flex: 0 0 5rem;
   display: grid;
   align-items: center;
-  /* padding: 0.25rem; */
+  padding: 0.25rem;
   text-transform: capitalize;
   letter-spacing: 2px;
-  /* border-top-right-radius: var(--radius);
-  border-bottom-right-radius: var(--radius); */
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
   border-radius: var(--radius);
   cursor: pointer;
   content: var(--clr-primary-5);
   transition: var(--transition);
-  font-size: 0.8rem;
+  font-size: 0.8rem; */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 .submit-btn:hover {
   background: var(--clr-primary-5);
@@ -240,7 +254,7 @@ Grocery List
 }
 
 .grocery-container {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .grocery-item {
